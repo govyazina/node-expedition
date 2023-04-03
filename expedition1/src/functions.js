@@ -30,7 +30,8 @@ function getAllRover() {
 
 // позволяет выбрать только те марсоходы, которые смогут прослужить больше 3 лет
 function getRightRovers() {
-
+    const filtred = equipment.filter(rover => rover[1] === 'марсоход' && +rover[2] > 3).map(el => el.join(', '))
+    return filtred
 }
 
 // позволяет выбрать ракету с максимальной дальностью полёта
