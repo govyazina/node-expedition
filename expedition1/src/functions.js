@@ -16,7 +16,8 @@ function getRightDoc() {
 
 // позволяет выбрать всех бортмехаников
 function getAllEngineer() {
-
+    const filtred = crew.filter(person => person[2] === 'Бортмеханик').map(el => el.join(', '))
+    return filtred
 }
 
 // Позволяет отобрать все марсоходы
