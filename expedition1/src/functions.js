@@ -1,6 +1,7 @@
 const fs = require('fs');
 //получаем массив из файла
 const crew = fs.readFileSync('src/crew.txt', 'utf8').split('\n').map(str => str.split(', '));
+const equipment = fs.readFileSync('src/equipment.txt', 'utf8').split('\n').map(str => str.split(', '));
 
 // позволяет выбрать самого опытного капитана
 function getRightCaptain() {
@@ -23,7 +24,8 @@ function getAllEngineer() {
 
 // Позволяет отобрать все марсоходы
 function getAllRover() {
-
+    const filtred = equipment.filter(rover => rover[1] === 'марсоход').map(el => el.join(', '))
+    return filtred
 }
 
 // позволяет выбрать только те марсоходы, которые смогут прослужить больше 3 лет
