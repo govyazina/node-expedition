@@ -10,7 +10,8 @@ function getRightCaptain() {
 
 // позволяет выбрать самого опытного врача среди женщин
 function getRightDoc() {
-
+    const filtred = crew.filter(person => person[2] === 'Врач' && person[1] === 'ж').sort((a, b) => +b[3] - +a[3])
+    return filtred[0].join(', ')
 }
 
 // позволяет выбрать всех бортмехаников
