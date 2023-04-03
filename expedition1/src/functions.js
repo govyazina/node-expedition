@@ -2,6 +2,7 @@ const fs = require('fs');
 //получаем массив из файла
 const crew = fs.readFileSync('src/crew.txt', 'utf8').split('\n').map(str => str.split(', '));
 const equipment = fs.readFileSync('src/equipment.txt', 'utf8').split('\n').map(str => str.split(', '));
+const rockets = fs.readFileSync('src/rockets.txt', 'utf8').split('\n').map(str => str.split(', '));
 
 // позволяет выбрать самого опытного капитана
 function getRightCaptain() {
@@ -36,6 +37,8 @@ function getRightRovers() {
 
 // позволяет выбрать ракету с максимальной дальностью полёта
 function getRightRocket() {
+    rockets.shift()
+    return rockets.sort((a, b) => +b[2] - +a[2])[0].join(', ')
 
 }
 
