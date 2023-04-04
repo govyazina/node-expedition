@@ -7,7 +7,7 @@ const {
   getRightRocket,
 } = require('../src/index');
 
-describe('Экспедиция на Марс', () => {
+describe('Экспедиция на Луну', () => {
   describe('Отбор кандидатов', () => {
     let crew;
     beforeEach(() => {
@@ -51,7 +51,7 @@ describe('Экспедиция на Марс', () => {
     });
     it('позволяет выбрать только те луноходы, которые смогут прослужить больше 5 лет', () => {
       const rightRovers = getRightRovers();
-      expect(rightRovers).toEqual([equipment[3], equipment[4]]);
+      expect(rightRovers).toEqual([equipment[2]]);
     });
   });
   describe('Выбор ракеты', () => {

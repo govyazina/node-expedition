@@ -16,29 +16,29 @@ function getRightCaptain() {
 
 // позволяет выбрать самого опытного бортмеханика среди женщин
 function getRightEngineer() {
-    const filtred = crew.filter(person => person[2] === 'Врач' && person[1] === 'ж').sort((a, b) => +b[3] - +a[3]).map(el => el.join(', '))
+    const filtred = crew.filter(person => person[2] === 'Бортмеханик' && person[1] === 'ж').sort((a, b) => +b[3] - +a[3]).map(el => el.join(', '))
     return filtred[0]
 }
 
 // позволяет выбрать всех врачей
 function getAllDM() {
-    return crew.filter(person => person[2] === 'Бортмеханик').map(el => el.join(', '))
+    return crew.filter(person => person[2] === 'Врач').map(el => el.join(', '))
 }
 
 // Позволяет отобрать все луноходы
 function getAllRover() {
-    return equipment.filter(rover => rover[1] === 'марсоход').map(el => el.join(', '))
+    return equipment.filter(rover => rover[1] === 'луноход').map(el => el.join(', '))
 }
 
 // позволяет выбрать только те луноходы, которые смогут прослужить больше 5 лет
 function getRightRovers() {
-    return equipment.filter(rover => rover[1] === 'марсоход' && +rover[2] > 3).map(el => el.join(', '))
+    return equipment.filter(rover => rover[1] === 'луноход' && +rover[2] > 5).map(el => el.join(', '))
 }
 
 // позволяет выбрать ракету с минимальной дальностью полёта
 function getRightRocket() {
     rockets.shift()
-    return rockets.sort((a, b) => +b[2] - +a[2])[0].join(', ')
+    return rockets.sort((a, b) => +a[2] - +b[2])[0].join(', ')
 
 }
 
