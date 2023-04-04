@@ -1,0 +1,18 @@
+{
+  "name": "release2",
+  "version": "1.0.0",
+  "description": "npm proj",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "npm",
+    "jest"
+  ],
+  "author": "Sveta Govyazina",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
